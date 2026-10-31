@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleMuse - Fashion Discovery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h2>STYLEMUSE</h2>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#discover">Discover</a>
+        <a href="#profile">Profile</a>
+    </nav>
+</header>
+
+<!-- HOME SCREEN -->
+<section id="home" class="screen">
+    <p class="tag">DISCOVER YOUR PERSONAL STYLE</p>
+    <h1>Fashion is your way<br>of expressing yourself.</h1>
+    <p>Find outfits that match your personality,
+       interests, and individuality.</p>
+
+    <button onclick="showScreen('quiz')">
+        Discover My Style →
+    </button>
+
+    <div class="fashion-image">✦ FASHION INSPIRATION ✦</div>
+</section>
+
+<!-- STYLE QUIZ -->
+<section id="quiz" class="screen hidden">
+    <p class="tag">PERSONAL STYLE QUIZ</p>
+    <h1>What's your fashion vibe?</h1>
+    <p>Choose the style that best represents you.</p>
+
+    <div class="choices">
+        <button onclick="selectStyle('Streetwear')">Streetwear</button>
+        <button onclick="selectStyle('Casual')">Casual</button>
+        <button onclick="selectStyle('Minimalist')">Minimalist</button>
+        <button onclick="selectStyle('Vintage')">Vintage</button>
+        <button onclick="selectStyle('Sporty')">Sporty</button>
+        <button onclick="selectStyle('Classic')">Classic</button>
+    </div>
+
+    <button onclick="showScreen('results')">See My Results →</button>
+</section>
+
+<!-- RESULTS SCREEN -->
+<section id="results" class="screen hidden">
+    <p class="tag">YOUR STYLE PERSONALITY</p>
+    <h1>Your style is...</h1>
+    <h2 id="styleResult">Not selected yet</h2>
+    <p>Your personal style is a way to express
+       who you are. Explore outfits that inspire you!</p>
+
+    <button onclick="showScreen('discover')">
+        Explore Outfits →
+    </button>
+</section>
+
+<!-- DISCOVER SCREEN -->
+<section id="discover" class="screen hidden">
+    <p class="tag">FASHION INSPIRATION</p>
+    <h1>Discover Your Look</h1>
+    <p>Explore different outfits and save your favorites.</p>
+
+    <div class="outfit-grid">
+        <div class="outfit">
+            <div class="outfit-art">🤎</div>
+            <h3>Neutral Aesthetic</h3>
+            <button onclick="saveOutfit('Neutral Aesthetic')">♡ Save</button>
+        </div>
+
+        <div class="outfit">
+            <div class="outfit-art">🖤</div>
+            <h3>Streetwear</h3>
+            <button onclick="saveOutfit('Streetwear')">♡ Save</button>
+        </div>
+
+        <div class="outfit">
+            <div class="outfit-art">✨</div>
+            <h3>Minimalist</h3>
+            <button onclick="saveOutfit('Minimalist')">♡ Save</button>
+        </div>
+
+        <div class="outfit">
+            <div class="outfit-art">🌸</div>
+            <h3>Soft Vintage</h3>
+            <button onclick="saveOutfit('Soft Vintage')">♡ Save</button>
+        </div>
+    </div>
+</section>
+
+<!-- SAVED SCREEN -->
+<section id="saved" class="screen hidden">
+    <p class="tag">YOUR COLLECTION</p>
+    <h1>Saved Outfits</h1>
+    <div id="savedList">
+        <p>No saved outfits yet.</p>
+    </div>
+</section>
+
+<!-- PROFILE SCREEN -->
+<section id="profile" class="screen hidden">
+    <p class="tag">YOUR ACCOUNT</p>
+    <h1>My Profile</h1>
+    <div class="avatar">☺</div>
+    <h3>Fashion Explorer</h3>
+    <p>Your style: <span id="profileStyle">Not selected</span></p>
+    <button onclick="showScreen('quiz')">Update My Style</button>
+    <button onclick="showScreen('settings')">Settings</button>
+</section>
+
+<!-- SETTINGS SCREEN -->
+<section id="settings" class="screen hidden">
+    <p class="tag">PREFERENCES</p>
+    <h1>Settings</h1>
+    <label>
+        <input type="checkbox" checked>
+        Receive fashion inspiration
+    </label>
+    <br><br>
+    <label>
+        <input type="checkbox">
+        Private profile
+    </label>
+    <br><br>
+    <button onclick="showScreen('profile')">Back to Profile</button>
+</section>
+
+<!-- BOTTOM NAVIGATION -->
+<footer>
+    <button onclick="showScreen('home')">⌂<small>Home</small></button>
+    <button onclick="showScreen('discover')">◇<small>Discover</small></button>
+    <button onclick="showScreen('saved')">♡<small>Saved</small></button>
+    <button onclick="showScreen('profile')">○<small>Profile</small></button>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
